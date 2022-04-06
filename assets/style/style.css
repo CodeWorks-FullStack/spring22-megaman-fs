@@ -1,0 +1,87 @@
+/* BASIC STYLES HERE */
+.boss-container {
+  border: 25px double #ffffffb0;
+  background: linear-gradient(270deg, #1374eb, rgb(0, 64, 128)), linear-gradient(90deg, #467bcf7a, #00228073);
+  position: relative;
+  cursor: pointer;
+}
+
+.boss-container:hover .highlight-box {
+  background-color: #1374eb;
+  border-color: white;
+}
+
+.boss-container ::after {
+  transition: all .3s linear;
+  border: 4px solid white;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.boss-container:hover {
+  border-color: white;
+}
+
+.boss-container:hover ::after {
+  border-color: white;
+}
+
+.highlight-box {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  background-color: black;
+  border: 0px solid transparent;
+  transition: all .3s linear;
+}
+
+.highlight-box.ts {
+  top: -25px;
+  left: -25px;
+}
+
+.highlight-box.te {
+  top: -25px;
+  right: -25px;
+}
+
+.highlight-box.bs {
+  bottom: -25px;
+  left: -25px;
+}
+
+.highlight-box.be {
+  bottom: -25px;
+  right: -25px;
+}
+
+
+.boss-container img {
+  height: 150px;
+  width: 150px;
+  object-fit: contain;
+  object-position: center;
+  background-color: black;
+  filter: brightness(.5);
+  transition: all .3s linear;
+}
+
+.boss-container:not(.dead):hover img {
+  filter: brightness(1);
+}
+
+.boss-container.dead img {
+  filter: grayscale(1);
+}
+
+.boss-bg {
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
